@@ -56,6 +56,16 @@ class Evaluator:
         viz = np.concatenate([img_np, pred_np, gt_np], axis=1)
         viz_path = os.path.join(self.args.result_dir, "%04d.jpg" % step)
         cv2.imwrite(viz_path, viz)
+    
+    def step(self, data):
+        img, label = data
+        # warp input
+        img = Variable(img).cuda()
+        label = Variable(label).cuda()
+
+        # compute output
+        pred = self.model(img)
+        return img, label, pred
 
 
 def eval_main():
