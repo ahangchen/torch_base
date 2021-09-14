@@ -3,10 +3,10 @@ from data.mem_list_dataset import MemListDataset
 from torch.utils.data import DataLoader
 
 
-def get_dataset_by_type(args):
+def get_dataset_by_type(args, is_train=False):
     type2data = {
-        'list': ListDataset(args),
-        'mem_list': MemListDataset(args)
+        'list': ListDataset(args, is_train),
+        'mem_list': MemListDataset(args, is_train)
     }
     dataset = type2data[args.data_type]
     return dataset
