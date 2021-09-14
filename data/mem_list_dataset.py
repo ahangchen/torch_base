@@ -3,9 +3,13 @@ import cv2
 
 
 class MemListDataset(Dataset):
-    def __init__(self, args, data_list):
+    def __init__(self, args, is_train):
         # usually we need args rather than single datalist to init the dataset
         super(self, MemListDataset).__init__()
+        if is_train:
+            data_list = args.train_list
+        else:
+            data_list = args.val_list
         infos = [line.split() for line in open(data_list).readlines()]
         img_paths = [info[0] for info in infos]
         label_paths = [infos[1] for info in infos]
