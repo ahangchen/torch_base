@@ -4,7 +4,7 @@ import numpy as np
 
 
 class ListDataset(Dataset):
-    def __init__(self, args):
+    def __init__(self, data_list):
         # usually we need args rather than single datalist to init the dataset
         super(self, ListDataset).__init__()
         infos = [line.split() for line in open(data_list).readlines()]
