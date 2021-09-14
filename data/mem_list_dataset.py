@@ -3,10 +3,10 @@ import cv2
 
 
 class MemListDataset(Dataset):
-    def __init__(self, args):
+    def __init__(self, args, data_list):
         # usually we need args rather than single datalist to init the dataset
         super(self, MemListDataset).__init__()
-        infos = [line.split() for line in open(args.data_list).readlines()]
+        infos = [line.split() for line in open(data_list).readlines()]
         img_paths = [info[0] for info in infos]
         label_paths = [infos[1] for info in infos]
         self.imgs = []
