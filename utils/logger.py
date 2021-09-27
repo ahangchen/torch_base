@@ -26,7 +26,7 @@ class Logger:
     def __init__(self, args):
         self.writer = SummaryWriter(args.model_dir)
         self.recoder = Recoder()
-        self.model_dir = args.
+        self.model_dir = args.model_dir
 
     def tensor2img(self, tensor):
         # implement according to your data, for example call viz.py
