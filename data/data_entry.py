@@ -22,7 +22,7 @@ def select_train_loader(args):
 
 def select_eval_loader(args):
     eval_dataset = get_dataset_by_type(args)
-    print('{} samples found in train'.format(len(eval_dataset)))
+    print('{} samples found in val'.format(len(eval_dataset)))
     val_loader = DataLoader(eval_dataset, 1, shuffle=False, num_workers=1, pin_memory=True, drop_last=False)
     return val_loader
 
