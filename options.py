@@ -60,7 +60,7 @@ def get_train_model_dir(args):
 
 
 def get_test_result_dir(args):
-    ext = os.path.basename(args.load_model_path).split('.')[0]
+    ext = os.path.basename(args.load_model_path).split('.')[-1]
     model_dir = args.load_model_path.replace(ext, '')
     val_info = os.path.basename(os.path.dirname(args.val_list)) + '_' + os.path.basename(args.val_list.replace('.txt', ''))
     result_dir = os.path.join(model_dir, val_info + '_' + args.save_prefix)
