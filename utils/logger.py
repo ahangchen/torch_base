@@ -11,7 +11,7 @@ class Recoder:
         if name in self.metrics.keys():
             self.metrics[name].append(value)
         else:
-            self.metrics[name] = []
+            self.metrics[name] = [value]
 
     def summary(self):
         kvs = {}
