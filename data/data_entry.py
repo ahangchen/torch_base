@@ -14,7 +14,7 @@ def get_dataset_by_type(args, is_train=False):
 
 def select_train_loader(args):
     # usually we need loader in training, and dataset in eval/test
-    train_dataset = get_dataset_by_type(args)
+    train_dataset = get_dataset_by_type(args, True)
     print('{} samples found in train'.format(len(train_dataset)))
     train_loader = DataLoader(train_dataset, args.batch_size, shuffle=True, num_workers=4, pin_memory=True, drop_last=False)
     return train_loader
