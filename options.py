@@ -12,6 +12,7 @@ def parse_common_args(parser):
     parser.add_argument('--val_list', type=str, default='/data/dataset1/list/base/val.txt',
                         help='val list in train, test list path in test')
     parser.add_argument('--gpus', nargs='+', type=int)
+    parser.add_argument('--seed', type=int, default=1234)
     return parser
 
 
