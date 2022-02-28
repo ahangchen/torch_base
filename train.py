@@ -95,7 +95,7 @@ class Trainer:
 
         # compute output
         pred = self.model(img)
-        return img, label, pred
+        return img, pred, label
 
     def compute_metrics(self, pred, gt, is_train):
         # you can call functions in metrics.py
