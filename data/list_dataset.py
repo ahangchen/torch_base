@@ -13,7 +13,7 @@ class ListDataset(Dataset):
             data_list = args.val_list
         infos = [line.split() for line in open(data_list).readlines()]
         self.img_paths = [info[0] for info in infos]
-        self.label_paths = [infos[1] for info in infos]
+        self.label_paths = [info[1] for info in infos]
 
     def preprocess(self, img, label):
         # cv: h, w, c, tensor: c, h, w
